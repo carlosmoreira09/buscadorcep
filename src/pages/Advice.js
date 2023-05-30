@@ -4,22 +4,23 @@ import { CgArrowUpO } from "react-icons/cg";
 import teste from '../services/ApiCep';
 import '../style.css';
 import { useNavigate } from 'react-router-dom';
+import apiadvice from '../services/ApiAd';
 
 function Advice() {
 
   const [advice, setAdvice] = useState("")
   const navigate = useNavigate();
+  const [text,setText] = useState("Click para gerar seu Conselho")
 
   async function handleSearch() { 
     
     try { 
 
-      const response = await teste.get('advice')
+      const response = await apiadvice.get('advice')
       console.log(response.data.slip)
       setAdvice(response.data.slip)
-      
+      setText("Click para gerar outro Conselho")
     } catch(error) {
-      
     
       alert(error.message)
       
@@ -33,8 +34,9 @@ function Advice() {
   return (
     <div className="container">
       <h1 className="title"> Conselho Diário</h1>
+      
       <button className="FiArrowLeft" onClick={handleSearch}>
-        Click para Gerar seu Conselho
+      {text}
       <CgArrowUpO site={25} color="#FFF"/>
        </button>
 

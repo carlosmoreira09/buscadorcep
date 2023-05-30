@@ -8,10 +8,10 @@ function BuscadorCep() {
 
   const [input, setInput] = useState('')
   const [cep, setCep] = useState({})
-  const [errorObj, setErrorObj] = useState({});
+  
   const navigate = useNavigate();
 
-  async function handleSearch() { 
+  async function handleCep() { 
     if(input === "") { 
       alert("Digite um CEP")
       return;
@@ -19,14 +19,15 @@ function BuscadorCep() {
 
     try { 
 
-      const response = await apicep.get(`${input}/json`);
+      const response = await apicep.get(`${input}`);
+      console.log(response.data)
       setCep(response.data)
       setInput("")
 
     } catch(error) {
       
       navigate('')
-      alert("Digite um CEP Valido")
+      alert(error.message)
       setInput("")
       setCep({})
     }
@@ -49,7 +50,7 @@ function BuscadorCep() {
         }
         />
 
-      <button className="buttonSearch" onClick={handleSearch}>
+      <button className="buttonSearch" onClick={handleCep}>
         <FiSearch size={25} color="#FFF"/>
       </button>
       
@@ -62,10 +63,10 @@ function BuscadorCep() {
               <main className="main">
               <h2>CEP: {cep.cep}</h2>
               
-              <span>Logradouro: {cep.logradouro}</span>
-              <span>Complemento: {cep.complemento}</span>
-              <span>Bairro: {cep.bairro}</span>
-              <span>Estado: {cep.uf}</span>
+              <span>Logradouro: {cep.street}</span>
+              <span>Bairro: {cep.neighborhood}</span>
+              <span>Cidade: {cep.city}</span>
+              <span>Estado: {cep.state}</span>
             </main>
         )}
 

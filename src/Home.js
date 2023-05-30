@@ -27,6 +27,7 @@ export default function Home() {
 
     <div className="containerInput">
         <select id="apifind">
+          <option>Selecione uma API</option>
           <option value="cep" >Buscador CEP</option>
           <option value="advice">Conselho Diário</option>
           <option value='api1'>API 1</option>
