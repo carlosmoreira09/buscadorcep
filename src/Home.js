@@ -15,6 +15,9 @@ export default function Home() {
       case 'advice':
         navigate('/advice')
         break;
+        case 'cnpj':
+          navigate('/buscadorcnpj')
+          break;
       default:
         navigate('/')
     }
@@ -29,8 +32,8 @@ export default function Home() {
         <select id="apifind">
           <option>Selecione uma API</option>
           <option value="cep" >Buscador CEP</option>
+          <option value='cnpj'>Identificador CNPJ</option>
           <option value="advice">Conselho Diário</option>
-          <option value='api1'>API 1</option>
           <option value='api1'>API 1</option>
           <option value='api1'>API 1</option>  
         </select>

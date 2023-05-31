@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import BuscadorCep from './pages/BuscadorCep'
 import Advice from './pages/Advice'
+import BuscadorCnpj from './pages/BuscadorCNPJ'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/advice",
     element: <Advice />,
+  },
+  {
+    path: "/buscadorcnpj",
+    element: <BuscadorCnpj />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

@@ -14,7 +14,7 @@
 
 @keyframes flipTitle { 
     from{ 
-        transform: rotateX(90deg);
+        transform: rotateX(360deg);
 
     }
     to{ 
@@ -24,10 +24,10 @@
 
 .containerInput { 
     background-color: rgba(255,255,255,0.2);
-    padding: 15px;
-    margin: 34px 0;
+    padding: 30px;
+    margin: 50px 0;
     display: flex;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 1px 3px 8px rgba(0,0, 0,0.5);
 
 }
@@ -44,6 +44,11 @@
 }
 .containerInput input::placeholder { 
     color: #f1f1f1
+}
+
+#apifind { 
+    font-size: 20px;
+    padding: 10px;
 }
 
 .buttonSearch { 
@@ -73,7 +78,7 @@
     justify-content: center;
     flex-direction: column;    
     align-items: center;
-    width: 500px;
+    width: 700px;
     background-color: #FFF;
     border-radius: 8px;
 }
@@ -84,7 +89,7 @@
 }
 
 .main span { 
-    margin-bottom: 16px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
